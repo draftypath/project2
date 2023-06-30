@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>How it Works</title>
+  <link rel="stylesheet" type="text/css" href="how-it-works.css">
+</head>
+
+<body>
+  <video autoplay muted loop id="background-video">
+    <source src="backgroundvideo5.mp4" type="video/mp4">
+  </video>
+  <div class="container">
+    <a href="index.html"><img src="blackheart.png" alt="Logo" class="logo"></a>
+    <h1>
+      <nav>
+        <ul>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="register-your-pet.html">Register Your Pet</a></li>
+          <li><a href="report-missing.html">Report Missing</a></li>
+          <li><a href="found-a-pet.html">Found a Pet?</a></li>
+        </ul>
+      </nav>
+    </h1>
+    <h2 class="main-header">How It Works</h2>
+
+
+    <div class="photo-container">
+      <div class="photo photo1"></div>
+      <div class="photo photo2"></div>
+      <div class="photo photo3"></div>
+    </div>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+
+      .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        height: 300px;
+        margin-top: 560px;
+      }
+
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .help-container {
+        margin-top: -70px;
+        padding: 10px;
+        background-color: none;
+      }
+</style>
+
+<div class="row">
+  <div class="column" style="background-color:none;">
+    <h2>Register Your Pet</h2>
+    <p>Create a profile for your pet by providing their name, description, breed, and your contact information. This
+      information helps others identify and recognize your pet if they come across them.</p>
+  </div>
+  <div class="column" style="background-color:none;">
+    <h2>Report Missing</h2>
+    <p>Mark the last seen location on the interactive map. Click or tap on the map to drop a pin at the exact spot.
+
+      Set a search radius to notify app users within the chosen distance. This increases the chances of finding your pet
+      quickly.</p>
+  </div>
+  <div class="column" style="background-color:none;">
+    <h2>Get Notified</h2>
+    <p> Once you submit the missing pet report, all app users within the chosen search radius will receive a
+      notification about your missing pet. Once found they are then able to notify you directly through the app to
+      deliver the good news.</p>
+  </div>
+</div>
+<div class="help-container">
+  <h2>Help Make This Possible!</h2>
+  <p>As a community-driven app, we encourage all users to actively participate in the search efforts. Keep an eye out
+    for missing pets in your area and be alert for any sightings that match the descriptions provided. If you have any
+    information or have found a missing pet, please reach out to the owner directly using the contact details provided
+    in the app.</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How it Works</title>
+    <link rel="stylesheet" type="text/css" href="report-missing.css" />
+    <link rel="stylesheet" type="text/css" href="search-bar.css" />
+  </head>
+  <body>
+    <video autoplay muted loop id="background-video">
+      <source src="backgroundvideo14.mp4" type="video/mp4" />
+    </video>
+    <div class="container">
+      <a href="index.html"
+        ><img src="blackheart.png" alt="Logo" class="logo"
+      /></a>
+      <div class="image-container">
+        <img src="mapimage.jpg" alt="Your Image" class="fixed-image" />
+      </div>
+      <h1>
+        <nav>
+          <ul>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="register-your-pet.html">Register Your Pet</a></li>
+            <li><a href="report-missing.html">Report Missing</a></li>
+            <li><a href="found-a-pet.html">Found a Pet?</a></li>
+          </ul>
+        </nav>
+      </h1>
+      <h2 class="main-header">Report A Missing Pet</h2>
+      <h3>Help us find your beloved pet by reporting them missing</h3>
+
+      <div class="photo-container">
+        <div class="mapphoto"></div>
+      </div>
+
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+          height: 50px;
+          margin-top: 0px;
+        }
+
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .help-container {
+          margin-top: 330px;
+          padding: 10px;
+          background-color: white;
+        }
+      </style>
+
+      <div class="row">
+        <div class="column" style="background-color: none">
+          <h4>Pinpoint Last Seen Location:</h4>
+          <p>
+            Use the interactive map to mark the spot where your pet was last
+            seen before they went missing. Simply click or tap on the map to
+            drop a pin at the exact location
+          </p>
+        </div>
+        <div class="column" style="background-color: none">
+          <h4>Search Radius:</h4>
+          <p>
+            Set Search Radius: Use the scroller to choose the desired distance
+            within which your pet may have traveled. This will create a circle
+            or radius on the map
+          </p>
+        </div>
+        <div class="column" style="background-color: none">
+          <h4>Notify Nearby Community:</h4>
+          <p>
+            Once you submit the missing pet report, all app users within the
+            chosen search radius will receive a notification about your missing
+            pet
+          </p>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search an address"
+        />
+        <button class="search-button" type="submit">Report Missing</button>
+      </div>
+      <div class="slider-container">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          class="slider"
+          id="mySlider"
+        />
+      </div>
+    </div>
+  </body>
+</html>

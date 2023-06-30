@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register Your Pet</title>
+    <link rel="stylesheet" type="text/css" href="register-your-pet.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="index.html"
+        ><img src="blackheart.png" alt="Logo" class="logo"
+      /></a>
+      <h1>
+        <nav>
+          <ul>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="register-your-pet.html">Register Your Pet</a></li>
+            <li><a href="report-missing.html">Report Missing</a></li>
+            <li><a href="found-a-pet.html">Found a Pet?</a></li>
+          </ul>
+        </nav>
+        <h1>Register Your Pet</h1>
+        <h3>This helps others to locate your pet</h3>
+        <form id="petForm" method="post" action="index.html">
+          <fieldset>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Name of Pet"
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Breed/Animal Type:"
+            />
+          </fieldset>
+          <fieldset>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Description of Appearance and Behavior (500 words maximum)"
+              rows="4"
+            ></textarea>
+            <p class="word-count" id="wordCount">0 words</p>
+          </fieldset>
+          <fieldset>
+            <label for="photo">Upload Photo:</label>
+            <input type="file" id="photo" name="photo" />
+          </fieldset>
+          <fieldset>
+            <input type="submit" value="Register" id="registerButton" />
+          </fieldset>
+        </form>
+      </h1>
+    </div>
+
+    <script>
+      const petForm = document.getElementById("petForm");
+      const descriptionInput = document.getElementById("description");
+      const wordCountDisplay = document.getElementById("wordCount");
+
+      petForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nameOfPet = document.getElementById("firstName").value;
+        const breed = document.getElementById("lastName").value;
+        const description = document.getElementById("description").value;
+
+        const petData = {
+          nameOfPet: nameOfPet,
+          breed: breed,
+          description: description,
+        };
+
+        const petDataJSON = JSON.stringify(petData);
+
+        console.log(petDataJSON);
+
+        const popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.textContent = `${nameOfPet} has been successfully registered to Beacon!`;
+
+        document.body.appendChild(popup);
+
+        setTimeout(function () {
+          popup.remove();
+        }, 3000);
+      });
+
+      descriptionInput.addEventListener("input", function () {
+        const description = descriptionInput.value;
+        const wordCount = description.trim().split(/\s+/).length;
+        wordCountDisplay.textContent = `${wordCount} words`;
+
+        if (wordCount > 500) {
+          const popup = document.createElement("div");
+          popup.classList.add("popup");
+          popup.textContent = "Oops, looks like that's a bit too long";
+
+          document.body.appendChild(popup);
+
+          setTimeout(function () {
+            popup.remove();
+          }, 3000);
+
+          descriptionInput.value = description
+            .split(/\s+/)
+            .slice(0, 500)
+            .join(" ");
+          wordCountDisplay.textContent = "500 words (maximum)";
+        }
+      });
+    </script>
+  </body>
+</html>

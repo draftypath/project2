@@ -1,0 +1,174 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left-center;
+  padding: 200px;
+}
+
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 75px;
+  height: 75px;
+  z-index: 2;
+}
+
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  z-index: 1;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: none;
+}
+
+nav ul li {
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+nav ul li a {
+  display: block;
+  padding: 5px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: none;
+  color: whitesmoke;
+}
+
+
+h2.main-header {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  margin-top: -450px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding: 50px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  border: none;
+}
+
+textarea#description {
+  width: 105%;
+  resize: vertical;
+}
+
+input[type="text"],
+input[type="description"],
+input[type="file"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(251, 231, 234);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: pink;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ddb7f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -5;
+  opacity: 0.8;
+
+}

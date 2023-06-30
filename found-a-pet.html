@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Found a Pet</title>
+  <link rel="stylesheet" type="text/css" href="found-a-pet.css">
+</head>
+<body>
+  <video autoplay muted loop id="background-video">
+    <source src="backgroundvideo10.mp4" type="video/mp4">
+  </video>
+  <div class="container">
+    <a href="index.html"><img src="blackheart.png" alt="Logo" class="logo"></a>
+    <h1>
+      <nav>
+        <ul> 
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="register-your-pet.html">Register Your Pet</a></li>
+          <li><a href="report-missing.html">Report Missing</a></li>
+          <li><a href="found-a-pet.html">Found a Pet?</a></li>
+        </ul>
+      </nav>
+      <h1>Found A Missing Pet? Notify The Owner</h1>
+      <form id="petForm">
+        <fieldset>
+          <input type="text" id="firstName" name="firstName" placeholder="Your Name" required>
+        </fieldset>
+        <fieldset>
+          <input type="text" id="locationFound" name="locationFound" placeholder="Location Found" required>
+        </fieldset>
+        <fieldset>
+          <textarea id="message" name="message" placeholder="Send a Message (Maximum 500 Words)" rows="4" required></textarea>
+          <p class="word-count" id="wordCount">0 words</p>
+        </fieldset>
+        <fieldset>
+          <label for="photo">Upload Photo of Found Pet?</label>
+          <input type="file" id="photo" name="photo">
+        </fieldset>
+        <fieldset>
+          <input type="submit" value="Submit" id="registerButton">
+        </fieldset>
+      </form>
+    </h1>
+  </div>
+
+  <script>
+  const petForm = document.getElementById("petForm");
+const descriptionInput = document.getElementById("message");
+const wordCountDisplay = document.getElementById("wordCount");
+
+petForm.addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+  const firstName = document.getElementById("firstName").value;
+  const locationFound = document.getElementById("locationFound").value;
+  const message = document.getElementById("message").value;
+
+ 
+  const petData = {
+    firstName: firstName,
+    locationFound: locationFound,
+    message: message
+  };
+
+  
+  const petDataJSON = JSON.stringify(petData);
+
+  
+  console.log(petDataJSON);
+
+  const popup = document.createElement("div");
+  popup.classList.add("popup");
+  popup.textContent = `${firstName}, thank you for your submission. The owner will now be notified.`;
+
+  document.body.appendChild(popup);
+
+  setTimeout(function() {
+    popup.remove();
+  }, 3000); 
+});
+
+descriptionInput.addEventListener("input", function() {
+  const description = descriptionInput.value;
+  const wordCount = description.trim().split(/\s+/).length;
+  wordCountDisplay.textContent = `${wordCount} words`;
+
+  if (wordCount > 500) {
+    const popup = document.createElement("div");
+    popup.classList.add("popup");
+    popup.textContent = "Oops, looks like that's a bit too long";
+
+    document.body.appendChild(popup);
+
+    setTimeout(function() {
+      popup.remove();
+    }, 3000); 
+
+    descriptionInput.value = description.split(/\s+/).slice(0, 500).join(" ");
+    wordCountDisplay.textContent = "500 words (maximum)";
+  }
+});
+  </script>
+</body>
+</html>
+
